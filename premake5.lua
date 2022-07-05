@@ -14,7 +14,7 @@ project "ImGuizmo"
 	}
 
 	includedirs {
-		"%{IncludeDir.imgui}/imgui"
+		"%{IncludeDir.imgui}"
 	}
 
  	filter "system:windows"
