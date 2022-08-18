@@ -14,7 +14,13 @@ project "ImGuizmo"
 	}
 
 	includedirs {
-		"%{IncludeDir.imgui}"
+		"%{IncludeDir.fmt}",
+		"%{IncludeDir.mle}",
+		"%{IncludeDir.fmt}",
+		"%{IncludeDir.boost}",
+		"%{IncludeDir.imgui}",
+		"%{IncludeDir.spdlog}",
+		"%{IncludeDir.general_includes}"
 	}
 
  	filter "system:windows"
