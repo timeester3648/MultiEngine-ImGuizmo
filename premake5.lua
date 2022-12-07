@@ -20,6 +20,7 @@ project "ImGuizmo"
 		"%{IncludeDir.boost}",
 		"%{IncludeDir.imgui}",
 		"%{IncludeDir.spdlog}",
+		"%{IncludeDir.magic_enum}",
 		"%{IncludeDir.intrinsics}",
 		"%{IncludeDir.general_includes}"
 	}
