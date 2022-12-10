@@ -25,5 +25,5 @@ project "ImGuizmo"
 		"%{IncludeDir.general_includes}"
 	}
 
-	filter "action:vs*"
+	filter "toolset:msc"
 		disablewarnings { "4018" }
