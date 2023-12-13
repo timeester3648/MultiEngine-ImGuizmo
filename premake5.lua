@@ -36,7 +36,7 @@ project "ImGuizmoStatic"
 	cdialect "C17"
 	targetname "ImGuizmo"
 	inlining "Auto"
-	tags { "use_statuc_mle" }
+	tags { "use_static_mle" }
 
 	files {
 		"./*.h",
