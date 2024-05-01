@@ -763,7 +763,13 @@ namespace IMGUIZMO_NAMESPACE
       float mGizmoSizeClipSpace = 0.1f;
    };
 
-   static Context gContext;
+
+   // Note: MultiEngine-Extension
+   // static Context gContext;
+   static Context defaultContext;
+   static Context* currentContext = nullptr;
+
+   #define gContext (*(currentContext != nullptr ? currentContext : &defaultContext))
 
    static const vec_t directionUnary[3] = { makeVect(1.f, 0.f, 0.f), makeVect(0.f, 1.f, 0.f), makeVect(0.f, 0.f, 1.f) };
    static const char* translationInfoMask[] = { "X : %5.3f", "Y : %5.3f", "Z : %5.3f",
@@ -2994,3 +3000,23 @@ namespace IMGUIZMO_NAMESPACE
       ComputeContext(svgView.m16, svgProjection.m16, gContext.mModelSource.m16, gContext.mMode);
    }
 };
+
+// Note: MultiEngine-Extension
+namespace IMGUIZMO_NAMESPACE {
+   Context* GetCurrentContext() {
+      return currentContext;
+   }
+
+   void SetCurrentContext(Context* context) {
+      currentContext = context;
+   }
+
+   Context* CreateContext() {
+      return IM_NEW(Context)();
+   }
+
+   void DestroyContext(Context* context) {
+      IM_DELETE(context);
+   }
+}
+

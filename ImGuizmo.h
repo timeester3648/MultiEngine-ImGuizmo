@@ -270,3 +270,14 @@ namespace IMGUIZMO_NAMESPACE
 
    IMGUI_API Style& GetStyle();
 }
+
+// Note: MultiEngine-Extension
+namespace IMGUIZMO_NAMESPACE {
+   struct Context;
+
+   Context* GetCurrentContext();
+   void SetCurrentContext(Context* context = nullptr);
+
+   Context* CreateContext();
+   void DestroyContext(Context* context);
+}
