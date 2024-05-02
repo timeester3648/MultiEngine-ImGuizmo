@@ -275,9 +275,11 @@ namespace IMGUIZMO_NAMESPACE
 namespace IMGUIZMO_NAMESPACE {
    struct Context;
 
-   Context* GetCurrentContext();
-   void SetCurrentContext(Context* context = nullptr);
+   IMGUI_API Style& GetStyle(Context* context);
 
-   Context* CreateContext();
-   void DestroyContext(Context* context);
+   IMGUI_API Context* GetCurrentContext();
+   IMGUI_API void SetCurrentContext(Context* context = nullptr);
+
+   IMGUI_API Context* CreateContext();
+   IMGUI_API void DestroyContext(Context* context);
 }

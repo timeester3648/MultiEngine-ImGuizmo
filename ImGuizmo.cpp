@@ -3003,6 +3003,10 @@ namespace IMGUIZMO_NAMESPACE
 
 // Note: MultiEngine-Extension
 namespace IMGUIZMO_NAMESPACE {
+   Style& GetStyle(Context* context) {
+      return context->mStyle;
+   }
+
    Context* GetCurrentContext() {
       return currentContext;
    }
