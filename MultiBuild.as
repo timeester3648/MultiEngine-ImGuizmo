@@ -9,13 +9,11 @@ void main(MultiBuild::Workspace& workspace) {
 
 	properties.project_includes({
 		"fmt",
-		"mle",
-		"fmt",
-		"boost",
-		"imgui",
+		"Boost",
+		"ImGui",
 		"spdlog",
 		"magic_enum",
-		"intrinsics"
+		"Intrinsics"
 	});
 
 	project.include_own_required_includes(true);
@@ -30,6 +28,6 @@ void main(MultiBuild::Workspace& workspace) {
 
 	{
 		MultiBuild::ScopedFilter _(project, "project.compiler:VisualCpp");
-		properties.disable_warnings({ "4018" });
+		properties.disable_warnings("4018");
 	}
 }
